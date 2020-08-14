@@ -1,0 +1,34 @@
+.newTask {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.newTask__form {
+    height: 300px;
+    width: 350px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.newTask__form fieldset {
+    padding: 40px;
+    background-color: #ddd;
+}
+
+.newTask__form label {
+    margin: 15px;
+}
+
+.newTask__form input {
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
+.newTask button {
+    margin: 10px;
+    width: 70px;
+}  

@@ -1,0 +1,35 @@
+.completedTasks {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 100vh;
+}
+
+.completedTasks__table {
+    background-color: #ddd;
+    margin: auto;
+    text-align: center;
+    min-height: 500px;
+    min-width: 300px;
+}
+
+.completedTasks__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.completedTasks__table th {
+    padding: 15px;
+}
+
+.completedTasks__links {
+    padding: 5% 0;
+}
+
+.completedTasks button {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+}

@@ -1,0 +1,17 @@
+.taskList {
+    background-color: #ccc;
+    flex: 1;
+    min-height: 700px;
+    margin: 10px;
+}
+
+.taskList li {
+    list-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .taskList {
+        min-height: 400px;
+    }
+
+}

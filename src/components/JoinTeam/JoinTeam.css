@@ -1,0 +1,32 @@
+.joinTeam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+}
+
+.joinTeam__form {
+    align-items: center;
+    max-width: 90vw;
+    padding: 50px;
+    text-align: center;
+    background-color: #ddd;
+}
+
+.joinTeam__form input {
+    margin: 5px;
+}
+
+.joinTeam button {
+    width: 70px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .joinTeam__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

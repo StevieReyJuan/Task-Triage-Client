@@ -1,0 +1,46 @@
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cardDetails .taskCard {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cardDetails__table {
+    background-color: #ddd;
+    text-align: center;
+    min-height: 500px;
+    min-width: 375px;
+}
+
+.cardDetails__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cardDetails__table th {
+    padding: 15px;
+}
+
+.cardDetails__links {
+    padding: 5% 0;
+}
+
+.cardDetails__buttons {
+    display: flex;
+    margin: 5px;
+}
+
+.cardDetails button {
+    /* display: flex;
+    justify-content: center; */
+    width: 70px;
+}

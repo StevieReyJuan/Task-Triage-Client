@@ -1,0 +1,41 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 100vh;
+}
+
+.login__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 350px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.login__form fieldset {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #ddd;
+}
+
+.login__form label {
+    margin: 15px;
+}
+
+.login__form input {
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
+.login button {
+    margin: 10px auto;
+    width: 70px;
+}  
+
+/* Consider mobile first width for text blocks */
