@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import TasksContext from '../../context/TasksContext';
 import Section, { Table } from '../Utils/Utils';
+import { format } from 'date-fns';
 import './CompletedTasks.css';
 
 class CompletedTasks extends Component {
+
+    static contextType = TasksContext;
+
     render() {
+
+        const archivedTasks = this.context.tasksList.filter(task => {
+            return task.status === 'Done'})
+                .map(task => {
+                    return (
+                        <tr key={task.id}>
+                            <td><Link to={`/teams/${task.team}/${task.id}`}>{task.id}</Link></td>
+                            <td>{task.title}</td>
+                            <td>{format(task.date_modified, 'MMM Do YYYY')}</td>
+                        </tr>
+                    );
+                });
+        
         return (
             <>
                 <div className="toolbar"></div>
@@ -12,19 +30,13 @@ class CompletedTasks extends Component {
                     <Table className='completedTasks'>
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Title</th>
                                 <th>Date Completed</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Donezo</td>
-                                <td>01/01/20</td>
-                            </tr>
-                            <tr>
-                                <td>Finito</td>
-                                <td>02/02/20</td>
-                            </tr>
+                            {archivedTasks}
                         </tbody>
                     </Table>
 

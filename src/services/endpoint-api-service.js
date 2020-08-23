@@ -38,14 +38,14 @@ const TaskTriageApiService = {
                 : res.json();
         });
     },
-    postTeam(teamName) {
+    postTeam(team_name) {
         return fetch(`${config.API_ENDPOINT}/teams`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
-            body: JSON.stringify(teamName)
+            body: JSON.stringify({team_name})
         })
         .then(res => {
             return (!res.ok)
@@ -60,7 +60,7 @@ const TaskTriageApiService = {
                 'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
-            body: JSON.stringify(token)
+            body: JSON.stringify({ token })
         })
         .then(res => {
             return (!res.ok)
@@ -84,24 +84,6 @@ const TaskTriageApiService = {
         });
     },
     updateTask(updatedTask) {
-        return fetch(`${config.API_ENDPOINT}/teams/${updatedTask.team}/${updatedTask.id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`
-            },
-            body: JSON.stringify(updatedTask)
-        })
-        .then(res => {
-            return (!res.ok)
-                ? res.json().then(e => Promise.reject(e))
-                : res.json();
-        });
-    },
-    archiveTask(updatedTask) {
-
-        updatedTask.status = 'Done';
-
         return fetch(`${config.API_ENDPOINT}/teams/${updatedTask.team}/${updatedTask.id}`, {
             method: 'PATCH',
             headers: {

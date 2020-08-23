@@ -52,8 +52,11 @@ class Login extends Component {
                 <p>Something something about Task Triage</p>
 
                 <footer className="login__footer">
-                    <p>To join a test board, click <Link to='/teams'>HERE</Link></p>
-                    <p>New User? <Link to='/register'>SIGN UP</Link></p>
+                    <p className="temp-styling">Demo credentials: Try any of:</p>
+                    <p className="temp-styling">Username: test123/Password: test123</p>
+                    <p className="temp-styling">Username: test456/Password: test456</p>
+                    <p className="temp-styling">Username: test789/Password: test789</p>
+                    <p className="temp-styling">New User? <Link to='/register'>SIGN UP</Link></p>
                 </footer>
             </Section>
         );

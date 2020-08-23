@@ -20,10 +20,12 @@ class Signup extends Component {
             user_name: username.value,
             password: password.value
         })
-            .then(user => {
+            .then(res => {
                 name.value = '';
                 username.value = '';
                 password.value = '';
+
+                this.props.history.goBack();
             })
             .catch(res => {
                 this.setState({ error: res.error });
@@ -37,7 +39,7 @@ class Signup extends Component {
         return (
             <Section className='signup'>
                 {/* {error && <p className='error-message'>{error}</p>} */}
-                <Form className="signup">
+                <Form className="signup" onSubmit={this.handleSubmit}>
                     <fieldset name="signup">
                         <legend>Register</legend>
                         <label htmlFor="name">Name</label>
@@ -49,7 +51,7 @@ class Signup extends Component {
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="hunter2" required />
 
-                        <button type="submit" onClick={() => this.props.history.push('/')}>Register</button>
+                        <button type="submit">Register</button>
                         <button type="button" onClick={() => this.props.history.push('/')}>Back</button>
                     </fieldset>
                 </Form>

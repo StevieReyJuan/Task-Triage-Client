@@ -36,6 +36,10 @@
 .login button {
     margin: 10px auto;
     width: 70px;
-}  
+}
+
+.login .temp-styling {
+    margin: 5px;
+}
 
 /* Consider mobile first width for text blocks */

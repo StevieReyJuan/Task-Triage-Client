@@ -9,14 +9,14 @@ class TaskList extends Component {
 
     render() {
         const tasksByStatus = this.props.tasks.filter(task => {
-            return task.status === this.props.status
-        }).map(task => {
-            return (
-                <li key={task.id}>
-                    <TaskCard task={task} />
-                </li>
-            );
-        });
+            return task.status === this.props.status})
+                .map(task => {
+                    return (
+                        <li key={task.id}>
+                            <TaskCard task={task} />
+                        </li>
+                    );
+                });
 
         return (
             <Section className='taskList'>

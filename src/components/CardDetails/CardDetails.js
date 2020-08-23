@@ -19,6 +19,18 @@ class CardDetails extends Component {
             .catch(this.context.setError);
     }
 
+    handleArchiveTask= () => {
+        const task = this.context.task;
+        task.status = 'Done';
+
+        TaskTriageApiService.updateTask(this.context.task)
+            .then(task => {
+                this.props.history.push(`/teams/${task.team}`);
+                this.context.clearTaskDetails();
+            })
+            .catch(this.context.setError);
+    }
+
     render() {
         return (
             <>
@@ -33,8 +45,7 @@ class CardDetails extends Component {
                     </div>
                     <div className='cardDetails__buttons'>
                         <button type='button' onClick={() => this.props.history.push(`/teams/${this.props.match.params.teamId}/${this.props.match.params.taskId}/edit-task`)}>Edit</button>
-                        {/* use task.team, task.id */}
-                        <button type='button' onClick={() => this.props.history.push('/teams/1')}>Delete</button>
+                        <button type='button' onClick={this.handleArchiveTask}>Archive</button>
                     </div>
                 </Section>
             </>
