@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import StaticToolbar from '../Navbar/StaticToolbar';
-import Section, { Table } from '../Utils/Utils';
+import Section from '../Utils/Utils';
 import TaskCard from '../TaskCard/TaskCard';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import TasksContext from '../../context/TasksContext';

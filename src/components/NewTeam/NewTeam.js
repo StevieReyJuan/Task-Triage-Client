@@ -4,7 +4,6 @@ import StaticToolbar from '../Navbar/StaticToolbar';
 import TeamsContext from '../../context/TeamsContext';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import './NewTeam.css';
-import { thisExpression } from '@babel/types';
 
 class NewTeam extends Component {
 

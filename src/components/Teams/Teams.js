@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Section, { Table } from '../Utils/Utils';
-import StaticToolbar from '../Navbar/StaticToolbar';
+// import StaticToolbar from '../Navbar/StaticToolbar';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import TeamsContext from '../../context/TeamsContext';
 import './Teams.css';
@@ -32,7 +32,8 @@ class Teams extends Component {
     render() {
         return (
             <>
-                <StaticToolbar></StaticToolbar>
+                {/* <StaticToolbar></StaticToolbar> */}
+                <div className="toolbar"/>
                 <Section className='teams'>
                     <Table className='teams'>
                         <thead>
@@ -44,21 +45,6 @@ class Teams extends Component {
                         </thead>
                         <tbody>
                             {this.renderTeams()}
-                            {/* <tr>
-                                <td><Link to='/teams/1'>1</Link></td>
-                                <td>Work</td>
-                                <td>UUID1</td>
-                            </tr>
-                            <tr>
-                                <td><Link to='/teams/2'>2</Link></td>
-                                <td>Home</td>
-                                <td>UUID2</td>
-                            </tr>
-                            <tr>
-                                <td><Link to='/teams/3'>3</Link></td>
-                                <td>Friends</td>
-                                <td>UUID3</td>
-                            </tr> */}
                         </tbody>
                     </Table>
                     <div className='teams__links'>
