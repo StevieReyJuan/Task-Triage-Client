@@ -6,6 +6,11 @@
     height: 100vh;
 }
 
+.login .logo {
+    font-size: 50px;
+    color: red;
+}
+
 .login__form {
     display: flex;
     justify-content: center;

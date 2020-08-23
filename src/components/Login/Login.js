@@ -35,6 +35,7 @@ class Login extends Component {
 
         return (
             <Section className='login'>
+                <p className='logo'>+</p>
                 <Form className="login" onSubmit={this.handleSubmitJwtAuth}>
                     <fieldset name="login">
                         <legend>Task Triage</legend>
@@ -49,7 +50,8 @@ class Login extends Component {
                     </fieldset>
                 </Form>
 
-                <p>Something something about Task Triage</p>
+                <p>Organize your "to-do" list with Task Triage and get things done...</p>
+                <p>A plan can be a real life saver!</p>
 
                 <footer className="login__footer">
                     <p className="temp-styling">Demo credentials: Try any of:</p>
