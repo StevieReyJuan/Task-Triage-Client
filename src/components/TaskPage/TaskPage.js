@@ -3,35 +3,42 @@ import { Link } from 'react-router-dom';
 import StaticToolbar from '../Navbar/StaticToolbar';
 import Section from '../Utils/Utils';
 import TaskList from '../TaskList/TaskList';
+import TaskTriageApiService from '../../services/endpoint-api-service';
+import TasksContext from '../../context/TasksContext';
 import './TaskPage.css';
 
 class TaskPage extends Component {
 
+    static contextType = TasksContext;
+
+    componentDidMount() {
+        const { teamId } = this.props.match.params;
+
+        this.context.clearError();
+        TaskTriageApiService.getTasksByTeam(teamId)
+            .then(this.context.setTasksList)
+            .catch(this.context.setError);
+    }
+
     render() {
+
+        const { tasksList } = this.context;
+
         return (
             <>
                 <StaticToolbar />
                 <Section className='taskPage'>
-                    <TaskList status='Severe'>
-                        <li><div className='taskCard'><Link to='/teams/1/1'>1</Link> Severe</div></li>
-                        <li><div className='taskCard'><Link to='/teams/1/2'>2</Link> Severe</div></li>
-                        <li><div className='taskCard'><Link to='/teams/1/3'>3</Link> Severe</div></li>
-                    </TaskList>
+                    <TaskList tasks={tasksList} status='Urgent' />
 
-                    <TaskList status='Elevated'>
-                        <li><div className='taskCard'><Link to='/teams/1/4'>4</Link> Elevated</div></li>
-                        <li><div className='taskCard'><Link to='/teams/1/4'>5</Link> Elevated</div></li>
-                    </TaskList>
+                    <TaskList tasks={tasksList} status='Elevated' />
 
-                    <TaskList status='Stable'>
-                        <li><div className='taskCard'><Link to='/teams/1/6'>6</Link> Stable</div></li>
-                    </TaskList>
+                    <TaskList tasks={tasksList} status='Delay' />
                     
                     <button 
                         className='add-button' 
                         title='Add a task' 
                         type='button'
-                        onClick={() => this.props.history.push('/new-task')}
+                        onClick={() => this.props.history.push(`/teams/${this.props.match.params.teamId}/new-task`)}
                     >
                         +
                     </button>

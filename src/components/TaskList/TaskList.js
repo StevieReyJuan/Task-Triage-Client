@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import TaskCard from '../TaskCard/TaskCard';
-import StaticToolbar from '../Navbar/StaticToolbar';
-import Section from '../Utils/Utils'
+// import StaticToolbar from '../Navbar/StaticToolbar';
+import Section from '../Utils/Utils';
 import './TaskList.css';
-import { logicalExpression } from '@babel/types';
 
 class TaskList extends Component {
 
     render() {
+        const tasksByStatus = this.props.tasks.filter(task => {
+            return task.status === this.props.status
+        }).map(task => {
+            return (
+                <li key={task.id}>
+                    <TaskCard task={task} />
+                </li>
+            );
+        });
+
         return (
             <Section className='taskList'>
                 <h2>{this.props.status}</h2>
                 <ul>
-                    {this.props.children}
-                    {/* map through priority level and create cards */}
-
-                    {/* <li>
-                        <TaskCard 
-                            id={}
-                            title={}
-                        />
-                    </li> */}
+                    {tasksByStatus}
                 </ul>
             </Section>
         );

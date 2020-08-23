@@ -2,9 +2,33 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Section, { Table } from '../Utils/Utils';
 import StaticToolbar from '../Navbar/StaticToolbar';
+import TaskTriageApiService from '../../services/endpoint-api-service';
+import TeamsContext from '../../context/TeamsContext';
 import './Teams.css';
 
 class Teams extends Component {
+
+    static contextType = TeamsContext;
+
+    componentDidMount() {
+        this.context.clearError();
+        TaskTriageApiService.getTeams()
+            .then(this.context.setTeamsList)
+            .catch(this.context.setError);
+    };
+
+    renderTeams() {
+        const { teamsList = [] } = this.context;
+
+        return teamsList.map(team => 
+            <tr key={team.id}>
+                <td><Link to={`/teams/${team.id}`}>{team.id}</Link></td>
+                <td>{team.name}</td>
+                <td>{team.token}</td>
+            </tr>
+        );
+    }
+
     render() {
         return (
             <>
@@ -19,7 +43,8 @@ class Teams extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            {this.renderTeams()}
+                            {/* <tr>
                                 <td><Link to='/teams/1'>1</Link></td>
                                 <td>Work</td>
                                 <td>UUID1</td>
@@ -33,7 +58,7 @@ class Teams extends Component {
                                 <td><Link to='/teams/3'>3</Link></td>
                                 <td>Friends</td>
                                 <td>UUID3</td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </Table>
                     <div className='teams__links'>

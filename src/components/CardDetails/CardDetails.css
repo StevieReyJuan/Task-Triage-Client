@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-.cardDetails__table {
+.cardDetails-content p {
     background-color: #ddd;
     text-align: center;
     min-height: 500px;

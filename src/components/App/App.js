@@ -10,6 +10,7 @@ import NewTeam from '../NewTeam/NewTeam';
 import CompletedTasks from '../CompletedTasks/CompletedTasks';
 import NewTask from '../NewTask/NewTask';
 import CardDetails from '../CardDetails/CardDetails';
+import EditTask from '../EditTask/EditTask';
 
 class App extends Component {
     render() {
@@ -20,10 +21,11 @@ class App extends Component {
                         <Route path='/register' component={Signup} />
                         <Route exact path='/teams' component={Teams} />
                         <Route exact path='/teams/:teamId' component={TaskPage} />
+                        <Route exact path='/teams/:teamId/new-task' component={NewTask} />
                         <Route exact path='/teams/:teamId/:taskId' component={CardDetails}/>
+                        <Route exact path='/teams/:teamId/:taskId/edit-task' component={EditTask}/>
                         <Route path='/join-team' component={JoinTeam} />
                         <Route path='/new-team' component={NewTeam} />
-                        <Route path='/new-task' component={NewTask} />
                         <Route path='/completed' component={CompletedTasks} />
                         {/* Not Found Page */}
                     </Switch>
