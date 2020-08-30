@@ -25,7 +25,7 @@
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    background-color: #ddd;
+    /* background-color: #ddd; */
 }
 
 .login__form label {

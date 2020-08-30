@@ -15,7 +15,7 @@
 
 .newTask__form fieldset {
     padding: 40px;
-    background-color: #ddd;
+    /* background-color: #ddd; */
 }
 
 .newTask__form label {
