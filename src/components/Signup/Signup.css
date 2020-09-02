@@ -6,6 +6,12 @@
     height: 100vh;
 }
 
+.signup legend {
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+}
+
 .signup__form {
     display: flex;
     justify-content: center;
@@ -17,10 +23,10 @@
 }
 
 .signup__form fieldset {
+    border-color: black;
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    /* background-color: #ddd; */
 }
 
 .signup__form label {
@@ -28,14 +34,17 @@
 }
 
 .signup__form input {
+    /* border-color: black; */
     width: auto;
     height: auto;
     margin: 10px;
 }
 
+.signup .wrap {
+    margin: 5px;
+}
+
 .signup button {
     margin: 10px auto;
-    width: 70px;
+    width: 75px;
 }  
-
-/* Consider mobile first width for text blocks */

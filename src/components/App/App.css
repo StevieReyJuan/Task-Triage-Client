@@ -3,3 +3,28 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body * {
+    /* font-family: ''; */
+    font-size: 18px;
+    line-height: 1.3em;
+}
+
+a {
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+button, .button {
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid black;
+}

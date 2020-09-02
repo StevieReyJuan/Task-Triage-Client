@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
-import Section, { Form } from '../Utils/Utils';
+import Section, { Form, Error } from '../Utils/Utils';
 import './Signup.css';
 
 class Signup extends Component {
@@ -34,30 +34,29 @@ class Signup extends Component {
 
     render() {
 
-        // const { error } = this.state;
+        const { error } = this.state;
 
         return (
             <Section className='signup'>
-                {/* {error && <p className='error-message'>{error}</p>} */}
-                <Form className="signup" onSubmit={this.handleSubmit}>
-                    <fieldset name="signup">
+                <Form className='signup' onSubmit={this.handleSubmit}>
+                    <fieldset name='signup'>
                         <legend>Register</legend>
-                        <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Sally" required />
+                        <label htmlFor='name'>Name</label>
+                        <input type='text' name='name' id='name' placeholder='Sally' required />
 
-                        <label htmlFor="username">User Name</label>
-                        <input type="text" name="username" id="username" placeholder="sallystudent123" required />
+                        <label htmlFor='username'>User Name</label>
+                        <input type='text' name='username' id='username' placeholder='sallystudent123' required />
 
-                        <label htmlFor="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="hunter2" required />
+                        <label htmlFor='password'>Password</label>
+                        <input type='password' name='password' id='password' placeholder='hunter2' required />
 
-                        <button type="submit">Register</button>
-                        <button type="button" onClick={() => this.props.history.push('/')}>Back</button>
+                        <button type='submit'>Register</button>
+                        <button type='button' onClick={() => this.props.history.push('/')}>Back</button>
                     </fieldset>
                 </Form>
-
-                <footer className="signup__footer">
-                    <p>Passwords must be between 7 and 72 characters long</p>
+                <footer className='signup__footer'>
+                    <p className='wrap'>Passwords must be between 7 and 72 characters long</p>
+                    {error && <Error message={error}/>}
                 </footer>
             </Section>
         );

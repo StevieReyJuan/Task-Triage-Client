@@ -10,11 +10,12 @@
     height: 300px;
     width: 350px;
     text-align: center;
+    align-items: center;
     margin: 0 auto;
 }
 
 .newTask__form fieldset {
-    padding: 40px;
+    padding: 20px;
     /* background-color: #ddd; */
 }
 
@@ -30,5 +31,5 @@
 
 .newTask button {
     margin: 10px;
-    width: 70px;
+    width: 75px;
 }  

@@ -7,8 +7,18 @@
 }
 
 .login .logo {
-    font-size: 50px;
+    font-size: 55px;
+    font-weight: 500;
     color: red;
+}
+
+@supports (-webkit-text-stroke: 1px red) {
+    .login .big-name {
+        font-size: 2.5em;
+        font-weight: 500;
+        color: red;
+        -webkit-text-stroke: 1px red;
+    }
 }
 
 .login__form {
@@ -21,11 +31,15 @@
     margin: 0 auto;
 }
 
+.login .spacer {
+    flex: 1;
+}
+
 .login__form fieldset {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    /* background-color: #ddd; */
+    border-color: black;
 }
 
 .login__form label {
@@ -43,8 +57,6 @@
     width: 70px;
 }
 
-.login .temp-styling {
+.login .wrap {
     margin: 5px;
 }
-
-/* Consider mobile first width for text blocks */

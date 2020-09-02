@@ -16,8 +16,7 @@ class CompletedTasks extends Component {
                 .map(task => {
                     return (
                         <tr key={task.id}>
-                            <td><Link to={`/teams/${task.team}/${task.id}`}>{task.id}</Link></td>
-                            <td>{task.title}</td>
+                            <td><Link to={`/teams/${task.team}/${task.id}`}>{task.title}</Link></td>
                             <td>{format(task.date_modified, 'MMM Do YYYY')}</td>
                         </tr>
                     );
@@ -25,12 +24,15 @@ class CompletedTasks extends Component {
         
         return (
             <>
-                <div className="toolbar"></div>
+                <nav className="toolbar">
+                    <div className="toolbar__navigation">
+                        <div className='toolbar__logo'><Link to='/teams'>Task Triage</Link></div>
+                    </div>
+                </nav>
                 <Section className='completedTasks'>
                     <Table className='completedTasks'>
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Title</th>
                                 <th>Date Completed</th>
                             </tr>

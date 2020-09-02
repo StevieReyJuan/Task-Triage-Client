@@ -19,7 +19,7 @@ class TaskList extends Component {
                 });
 
         return (
-            <Section className='taskList'>
+            <Section className={['taskList', this.props.status].join(' ')}>
                 <h2>{this.props.status}</h2>
                 <ul>
                     {tasksByStatus}

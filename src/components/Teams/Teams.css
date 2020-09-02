@@ -4,6 +4,10 @@
     height: 100vh;
 }
 
+.teams .test {
+    margin: auto;
+}
+
 .teams__table {
     /* background-color: #ddd; */
     margin: auto;

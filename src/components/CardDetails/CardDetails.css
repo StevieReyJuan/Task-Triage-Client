@@ -1,20 +1,20 @@
 .cardDetails {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     height: 100vh;
 }
 
 .cardDetails .taskCard {
+    margin: auto;
     width: 375px;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.cardDetails-content p {
-    /* background-color: #ddd; */
+.cardDetails-content {
     text-align: center;
     min-height: 500px;
     min-width: 375px;
@@ -36,11 +36,12 @@
 
 .cardDetails__buttons {
     display: flex;
-    margin: 5px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10vh;
 }
 
 .cardDetails button {
-    /* display: flex;
-    justify-content: center; */
-    width: 70px;
+    width: 75px;
 }

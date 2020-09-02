@@ -14,7 +14,7 @@
 }
 
 .editTask__form fieldset {
-    padding: 40px;
+    padding: 1em 0;
     /* background-color: #ddd; */
 }
 
@@ -30,5 +30,5 @@
 
 .editTask button {
     margin: 10px;
-    width: 70px;
+    width: 75px;
 }  

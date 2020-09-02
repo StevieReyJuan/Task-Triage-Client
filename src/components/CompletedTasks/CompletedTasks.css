@@ -6,7 +6,6 @@
 }
 
 .completedTasks__table {
-    /* background-color: #ddd; */
     margin: auto;
     text-align: center;
     min-height: 500px;
@@ -31,5 +30,5 @@
 .completedTasks button {
     display: flex;
     justify-content: center;
-    width: 70px;
+    width: 75px;
 }

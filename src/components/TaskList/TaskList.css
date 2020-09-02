@@ -3,10 +3,30 @@
     flex: 1;
     min-height: 700px;
     margin: 10px;
+    text-align: center;
+}
+
+.taskList h2 {
+    padding: 10px;
 }
 
 .taskList li {
     list-style: none;
+}
+
+.taskList.Urgent {
+    /* border: 2px solid red; */
+    background-color: rgba(255,0,0,0.1);
+}
+
+.taskList.Elevated {
+    /* border: 2px solid yellow; */
+    background-color: rgba(255,255,0,0.1);
+}
+
+.taskList.Delay {
+    /* border: 2px solid green; */
+    background-color: rgba(0,128,0,0.1);
 }
 
 @media only screen and (max-width: 600px) {

@@ -9,10 +9,10 @@ class TaskCard extends Component {
         const { task } = this.props;
 
         return (
-            <div className='taskCard'>
+            <div className={['taskCard', task.status].join(' ')}>
                 <h3 className='taskCard__title'>
-                    <Link to={`/teams/${task.team}/${task.id}`}>{task.id}</Link>
-                    {task.title}
+                    <Link to={`/teams/${task.team}/${task.id}`}>{task.title}</Link>
+                    {/* {task.title} */}
                 </h3>
             </div>
         );

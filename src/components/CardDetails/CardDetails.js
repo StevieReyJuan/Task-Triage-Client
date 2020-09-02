@@ -41,6 +41,7 @@ class CardDetails extends Component {
                         {/* {__.content.split(/\n \r|\n/).map((para, i) =>
                             <p key={i}>{para}</p>
                         )} */}
+                        {/* <p>{this.context.task.date_modified}</p> */}
                         <p>{this.context.task.content}</p>
                     </div>
                     <div className='cardDetails__buttons'>
