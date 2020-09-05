@@ -3,3 +3,44 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body * {
+    font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.3em;
+}
+
+p {
+    font-family: Lato, Helvetica, Arial, Verdana, sans-serif;
+}
+
+a {
+    font-weight: 500;
+    color: #2875c6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input, textarea {
+    /* font-size: 0.875rem; */
+    border: 1px solid #aaa;
+    box-shadow: inset 1px 1px 1px #eee;
+}
+
+button:hover {
+    color: red;
+}
+
+button, .button {
+    font-weight: normal;
+    text-decoration: none;
+    color: #232a3b;
+    background-color: white;
+    padding: 5px;
+    border-radius: 0.375rem;
+    border: 1px solid #abb3b3;
+    box-shadow: 0 0.125rem 0.25rem rgba(12, 13, 13, 0.15);
+}

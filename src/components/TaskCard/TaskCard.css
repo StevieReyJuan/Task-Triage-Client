@@ -1,6 +1,46 @@
 .taskCard {
-    background-color: #aaa;
+    background-color: #fff;
     height: 60px;
-    max-width: 375px;
+    /* max-width: 375px; */
     margin: 5px;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(12, 13, 13, 0.15);
+}
+
+.taskCard.Urgent {
+    border: 3px solid red;
+}
+
+.taskCard.Elevated {
+    /* background-color: yellow; */
+    border: 3px solid yellow;
+}
+
+.taskCard.Delay {
+    border: 3px solid green;
+}
+
+.taskCard.Done {
+    border: 3px solid black;
+}
+
+.taskCard__title {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.taskCard a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    color: #232a3b;
+    text-decoration: none;
+}
+
+.taskCard a:hover {
+    color: red;
+    text-decoration: none;
 }

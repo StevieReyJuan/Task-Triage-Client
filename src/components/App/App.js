@@ -11,6 +11,7 @@ import CompletedTasks from '../CompletedTasks/CompletedTasks';
 import NewTask from '../NewTask/NewTask';
 import CardDetails from '../CardDetails/CardDetails';
 import EditTask from '../EditTask/EditTask';
+import NotFound from '../NotFound/NotFound';
 
 class App extends Component {
     render() {
@@ -27,7 +28,7 @@ class App extends Component {
                         <Route path='/join-team' component={JoinTeam} />
                         <Route path='/new-team' component={NewTeam} />
                         <Route path='/completed' component={CompletedTasks} />
-                        {/* Not Found Page */}
+                        <Route component={NotFound} />
                     </Switch>
             </div>
         );

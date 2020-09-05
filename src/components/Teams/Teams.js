@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Section, { Table } from '../Utils/Utils';
+import { Link, NavLink } from 'react-router-dom';
+import Section, { Table, Error } from '../Utils/Utils';
 // import StaticToolbar from '../Navbar/StaticToolbar';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import TeamsContext from '../../context/TeamsContext';
@@ -22,23 +22,29 @@ class Teams extends Component {
 
         return teamsList.map(team => 
             <tr key={team.id}>
-                <td><Link to={`/teams/${team.id}`}>{team.id}</Link></td>
-                <td>{team.name}</td>
+                <td><Link to={`/teams/${team.id}`}>{team.name}</Link></td>
                 <td>{team.token}</td>
             </tr>
         );
     }
 
     render() {
+
+        const { error } = this.context;
+
         return (
             <>
-                {/* <StaticToolbar></StaticToolbar> */}
-                <div className="toolbar"/>
+                <nav className="toolbar">
+                    <div className="toolbar__navigation">
+                        <div className='toolbar__logo'><Link to='/teams'>Task + Triage</Link></div>
+                    </div>
+                </nav>
+
                 <Section className='teams'>
+                    {error && <Error message='Something went wrong! No teams to display. Please try again.'/>}
                     <Table className='teams'>
                         <thead>
                             <tr>
-                                <th>Team #</th>
                                 <th>Team Name</th>
                                 <th>Invite Key</th>
                             </tr>
@@ -48,8 +54,8 @@ class Teams extends Component {
                         </tbody>
                     </Table>
                     <div className='teams__links'>
-                        <Link to='/new-team'>Add a new Team</Link>
-                        <Link to='/join-team'>Join an existing team</Link>
+                        <NavLink className='button' to='/new-team'>Add a new Team</NavLink>
+                        <NavLink className='button' to='/join-team'>Join an existing team</NavLink>
                     </div>
                 </Section>
             </>

@@ -6,11 +6,13 @@
 }
 
 .completedTasks__table {
-    background-color: #ddd;
     margin: auto;
     text-align: center;
     min-height: 500px;
     min-width: 300px;
+    border-radius: 0.375rem;
+    border: 1px solid #abb3b3;
+    box-shadow: 0 0.375rem 0.75rem rgba(12, 13, 13, 0.15);
 }
 
 .completedTasks__links {
@@ -20,8 +22,12 @@
     align-items: center;
 }
 
-.completedTasks__table th {
-    padding: 15px;
+.completedTasks__table thead {
+
+}
+
+.completedTasks__table th {    
+    padding: 1em;
 }
 
 .completedTasks__links {
@@ -31,5 +37,5 @@
 .completedTasks button {
     display: flex;
     justify-content: center;
-    width: 70px;
+    width: 75px;
 }

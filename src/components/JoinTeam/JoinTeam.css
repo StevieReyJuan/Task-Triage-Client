@@ -11,7 +11,9 @@
     max-width: 90vw;
     padding: 50px;
     text-align: center;
-    background-color: #ddd;
+    border-radius: 0.375rem;
+    border: 1px solid #abb3b3;
+    box-shadow: 0 0.375rem 0.75rem rgba(12, 13, 13, 0.15);
 }
 
 .joinTeam__form input {

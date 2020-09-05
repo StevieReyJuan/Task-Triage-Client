@@ -1,9 +1,19 @@
+.section.signup {
+    margin-top: 0;
+}
+
 .signup {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
     height: 100vh;
+}
+
+.signup legend {
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
 }
 
 .signup__form {
@@ -17,10 +27,12 @@
 }
 
 .signup__form fieldset {
+    border-radius: 0.375rem;
+    border: 1px solid #abb3b3;
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    background-color: #ddd;
+    box-shadow: 0 0.375rem 0.75rem rgba(12, 13, 13, 0.15);
 }
 
 .signup__form label {
@@ -28,14 +40,22 @@
 }
 
 .signup__form input {
+    /* border-color: black; */
     width: auto;
     height: auto;
     margin: 10px;
 }
 
+.signup .wrap {
+    margin: 5px;
+}
+
 .signup button {
     margin: 10px auto;
-    width: 70px;
+    width: 80px;
 }  
 
-/* Consider mobile first width for text blocks */
+.signup .error-message {
+    position: absolute;
+    top: 0;
+}

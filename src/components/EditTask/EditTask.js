@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Section, { Form } from '../Utils/Utils';
+import Section, { Form, Error } from '../Utils/Utils';
 import StaticToolbar from '../Navbar/StaticToolbar';
 import TasksContext from '../../context/TasksContext';
 import TaskTriageApiService from '../../services/endpoint-api-service';
@@ -14,13 +14,11 @@ class EditTask extends Component {
 
         const updatedTask = {[name]: value};
         this.context.updateTaskDetails(updatedTask);
-        // console.log(this.context.task);
     }
 
     handleSubmitTask = e => {
         e.preventDefault();
-
-        this.setState({ error: null });
+        this.context.clearError();
 
         TaskTriageApiService.updateTask(this.context.task)
             .then(task => {
@@ -32,15 +30,16 @@ class EditTask extends Component {
 
     render () {
 
-        const { task } = this.context;
+        const { task, error } = this.context;
 
         return (
             <>
                 <StaticToolbar />
+                {error && <Error message='Something went wrong. Please try again.' />}
                 <Section className='editTask'>
                     <Form className='editTask' onSubmit={this.handleSubmitTask}>
                         <fieldset name="edit-task">
-                            {/* <legend>Edit Task</legend> */}
+                            <legend>Edit Task</legend>
                             <div className='select-container'>
                                 <label htmlFor='status'>Status:</label>
                                 <select name='status' id='status' defaultValue={task.status} onChange={this.handleChange}>

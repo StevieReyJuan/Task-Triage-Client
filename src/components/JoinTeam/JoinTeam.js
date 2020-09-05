@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Section, { Form } from '../Utils/Utils';
+import Section, { Form, Error } from '../Utils/Utils';
 import StaticToolbar from '../Navbar/StaticToolbar';
 import TeamsContext from '../../context/TeamsContext';
 import TaskTriageApiService from '../../services/endpoint-api-service';
@@ -11,6 +11,7 @@ class JoinTeam extends Component {
 
     handleSubmitTeam = e => {
         e.preventDefault();
+        this.context.clearError();
 
         // console.log(e.target.token.value);
         const token = e.target.token;
@@ -24,13 +25,17 @@ class JoinTeam extends Component {
     }
 
     render() {
+
+        const { error } = this.context;
+
         return (
             <>
                 <StaticToolbar />
+                {error && <Error message={error.error}/>}
                 <Section className='joinTeam'>
                     <Form className='joinTeam' onSubmit={this.handleSubmitTeam}>
                         <label htmlFor='token'>Team Key</label>
-                        <input type='text' id='token' name='token' />
+                        <input type='text' id='token' name='token' required />
                         <button type='submit'>
                             Join
                         </button>

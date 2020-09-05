@@ -38,7 +38,7 @@ export class TeamsProvider extends Component {
         const value = {
             teamsList: this.state.teamsList,
             error: this.state.error,
-            setError: this.error,
+            setError: this.setError,
             clearError: this.clearError,
             setTeamsList: this.setTeamsList,
             clearTeamsList: this.clearTeamsList

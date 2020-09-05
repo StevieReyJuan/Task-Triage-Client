@@ -1,3 +1,7 @@
+.section.login {
+    margin-top: 0;
+}
+
 .login {
     display: flex;
     flex-direction: column;
@@ -7,8 +11,49 @@
 }
 
 .login .logo {
-    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-size: 55px;
+    font-weight: 550;
     color: red;
+}
+
+.login .spin {
+    animation-name: spin;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    /* transform: rotate(3deg);
+    transform: rotate(0.3rad);
+    transform: rotate(3grad); 
+    transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.login .big-name {
+    font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+@supports (-webkit-text-stroke: 1px red) {
+    .login .big-name {
+        font-size: 2.5em;
+        font-weight: 500;
+        color: red;
+        -webkit-text-stroke: 1px red;
+    }
 }
 
 .login__form {
@@ -21,11 +66,17 @@
     margin: 0 auto;
 }
 
+.login .spacer {
+    flex: 1;
+}
+
 .login__form fieldset {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    background-color: #ddd;
+    border-radius: 0.375rem;
+    border: 1px solid #abb3b3;
+    box-shadow: 0 0.375rem 0.75rem rgba(12, 13, 13, 0.15);
 }
 
 .login__form label {
@@ -40,11 +91,14 @@
 
 .login button {
     margin: 10px auto;
-    width: 70px;
+    width: 75px;
 }
 
-.login .temp-styling {
+.login .wrap {
     margin: 5px;
 }
 
-/* Consider mobile first width for text blocks */
+.login .error-message {
+    position: absolute;
+    top: 0;
+}

@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- # Task Triage -->
+# Task Triage
 
-## Available Scripts
+Task Triage is a task management/organization app with an emphasis on prioritizing tasks by their "status"/level of urgency. Task Triage's general theme and color-story draws inspiration from a medical triage and its tagging system. Task Triage allows users to share tasks with "teams" for collaboration, with access to any tasks that a user is a teammate of. Use Task Triage for personal or shared accountability and get things done!
 
-In the project directory, you can run:
+## Motivation
 
-### `npm start`
+My original thought and name for this app was “Tailor Triage”, as once again the purpose of this app is to streamline a process at my job in which I find myself stuck in the past. In this case, the scenario is picking up/dropping off alterations at the tailor. Since I work at a traditional haberdashery, we still handwrite alteration forms for the tailor to follow. In some cases, there are “rushes”--alterations that have to be completed by a specific date sooner than and outside of the usual workflow. The accountability for the tailoring to be completed on-time ends up falling on the person that marked up the alterations to communicate to the tailor, and it is up to that same person to keep stock of the dates for delivery to the client. Instead of relying on calendars and bulletin boards at work, I figured it could be fun to make an app that could help us keep one another apprised of priority alterations. I dropped the "tailor" aspect of the app and decided to keep the tasks/to-dos as open ended as possible to broaden appeal. As for the "triage" component... I was an EMT once upon a time, and I found the color-tagging system intuitive, which is especially important in situations of urgency. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Build Status
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Version 1.0 is fully functional and ready for collaboration! A "teammate" with a unique team token can join an existing team and have access to its tasks, as well as edit them or create his/her own. Tasks can be "archived" when completed: In the event that a task needs to be restored I opted not to allow them to be deleted from the server, but I will look to implement deletion from the archived page with warnings that such an action is permanent. Of precedence next is real-time tracking of tasks and assigning due dates. It's not enough to just know which tasks are more important than others, there should be alerts and reminders when a task is about to bump up in urgency, or when an urgent task is dangerously due. Coming soon!
 
-### `npm test`
+## Screenshots
+Landing Page/Log In:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![landing page]()
 
-### `npm run build`
+User's Teams:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![teams]()
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Task Lists: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![task lists]()
 
-### `npm run eject`
+Task Details:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![task details]()
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Add/Edit Task: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![add/edit task]()
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+User's Archived Tasks:
 
-## Learn More
+![archived]()
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Join/Add Team: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![join/add team]()
 
-### Code Splitting
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Front-End
+* HTML
+* CSS (No frameworks)
+* Javascript
+* React (Create React App, React Router)
 
-### Analyzing the Bundle Size
+### Testing
+* Jest (Smoke tests)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Production
+* Deployed via Vercel
 
-### Making a Progressive Web App
+## Upcoming features
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* Calendar integration
+* Due date alerts
+* Send team token/invite via auto-generated e-mail
+* Send alerts/messages to teammates
+* UX/UI improvements
 
-### Advanced Configuration
+## Demo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- [Live Demo](https://task-triage-client.vercel.app/)
 
-### Deployment
+## Getting Started
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+cd to `task--triage-client`
 
-### `npm run build` fails to minify
+Run `npm install` to load dependencies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Run `npm test` to ensure build is stable
+
+This repository only contains the front-end client. To develop locally, the server is required which can be found at the repository below:
+
+[https://github.com/StevieReyJuan/Task-Triage-Server](https://github.com/StevieReyJuan/Task-Triage-Server)
+
+## Authors
+
+* **S. Reyes** - Development
+
+## Acknowledgments
+
+* **Mario Mol** - Mentor

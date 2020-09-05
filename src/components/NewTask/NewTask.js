@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Section, { Form } from '../Utils/Utils';
+import Section, { Form, Error } from '../Utils/Utils';
 import StaticToolbar from '../Navbar/StaticToolbar';
 import TasksContext from '../../context/TasksContext';
 import TaskTriageApiService from '../../services/endpoint-api-service';
@@ -11,6 +11,7 @@ class NewTask extends Component {
 
     handleSubmitTask = e => {
         e.preventDefault();
+        this.context.clearError();
 
         const { status, content, title } = e.target;
 
@@ -28,13 +29,16 @@ class NewTask extends Component {
     }
 
     render () {
+
+        const { error } = this.context;
         return (
             <>
                 <StaticToolbar />
+                {error && <Error message={error.error} />}
                 <Section className='newTask'>
                     <Form className='newTask' onSubmit={this.handleSubmitTask}>
                         <fieldset name="new-task">
-                            {/* <legend>Create Task</legend> */}
+                            <legend>Create Task</legend>
                             <div className='select-container'>
                                 <label htmlFor='status'>Status:</label>
                                 <select name='status' id='status'>

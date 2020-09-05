@@ -1,23 +1,38 @@
 .cardDetails {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
 }
 
+.cardDetails__wrapper {
+    border-radius: 0.375rem;
+    width: 500px;
+    padding: 1em;
+    border: 1px solid #abb3b3;
+    box-shadow: 0 0.375rem 0.75rem rgba(12, 13, 13, 0.15);
+    justify-content: space-around;
+}
+
 .cardDetails .taskCard {
-    width: 375px;
-    display: flex;
-    flex-direction: column;
+    margin: auto;
+    max-width: 375px;
     text-align: center;
 }
 
-.cardDetails-content p {
-    background-color: #ddd;
+.cardDetails-content {
+    margin: 1em 5px;
     text-align: center;
     min-height: 500px;
-    min-width: 375px;
+}
+
+.cardDetails-content p {
+    margin: 1em;
+}
+
+.cardDetails-content .align-left {
+    text-align: left;
 }
 
 .cardDetails__links {
@@ -36,11 +51,26 @@
 
 .cardDetails__buttons {
     display: flex;
-    margin: 5px;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10vh;
 }
 
 .cardDetails button {
-    /* display: flex;
-    justify-content: center; */
-    width: 70px;
+    width: 75px;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .cardDetails .taskCard {
+        max-width: 80%;
+    }
+
+    .cardDetails__wrapper {
+        width: auto;
+        margin: auto 1em;
+    }
+
 }

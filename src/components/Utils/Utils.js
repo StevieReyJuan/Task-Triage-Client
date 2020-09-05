@@ -1,4 +1,5 @@
 import React from 'react';
+import './Utils.css';
 
 export default function Section({ className, ...otherProps }) {
     return (
@@ -23,4 +24,12 @@ export function Table({ className, ...otherProps }) {
             {...otherProps}
         />
     );
+}
+
+export function Error({ message }) {
+    return (
+        <div role='alert'>
+            <p className='error-message'>{message}</p>
+        </div>
+    )
 }

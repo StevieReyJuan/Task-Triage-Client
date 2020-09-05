@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Section, { Form } from '../Utils/Utils';
+import Section, { Form, Error } from '../Utils/Utils';
 import AuthApiService from '../../services/auth-api-service';
 import './Login.css';
 import TokenService from '../../services/token-service';
@@ -8,12 +8,14 @@ import TokenService from '../../services/token-service';
 class Login extends Component {
 
     state = {
-        error: null
+        error: null,
+        loading: false
     };
 
     handleSubmitJwtAuth = e => {
         e.preventDefault();
         this.setState({ error: null });
+        this.setState({ loading: true });
         const { username, password } = e.target;
 
         AuthApiService.postLogin({
@@ -28,37 +30,48 @@ class Login extends Component {
             })
             .catch(res => {
                 this.setState({ error: res.error });
+                this.setState({ loading: false });
             });
     }
 
     render() {
 
+        const { error } = this.state;
+
         return (
             <Section className='login'>
-                <p className='logo'>+</p>
-                <Form className="login" onSubmit={this.handleSubmitJwtAuth}>
-                    <fieldset name="login">
-                        <legend>Task Triage</legend>
+                {error && <Error message={error}/>}
+                <header>
+                    <p className={'logo ' + (this.state.loading ? 'spin' : '')}>+</p>
+                    <p className='spacer'></p>
+                    <p className='big-name'>Task Triage</p>
+                </header>
+                {/* {error && <Error message={error}/>} */}
+                <main>
+                    <Form className='login' onSubmit={this.handleSubmitJwtAuth}>
+                        <fieldset name='login'>
+                            {/* <legend>Task Triage</legend> */}
 
-                        <label htmlFor="username">Username</label>
-                        <input type="text" name="username" id="username" required />
+                            <label htmlFor='username'>Username</label>
+                            <input type='text' name='username' id='username' required />
 
-                        <label htmlFor="password">Password</label>
-                        <input type="password" name="password" id="password" required />
+                            <label htmlFor='password'>Password</label>
+                            <input type='password' name='password' id='password' required />
 
-                        <button type="submit">Log in</button>
-                    </fieldset>
-                </Form>
+                            <button type='submit'>Log in</button>
+                        </fieldset>
+                    </Form>
+                </main>
 
-                <p>Organize your "to-do" list with Task Triage and get things done...</p>
+                <p className='wrap'>Organize your "to-do" list with Task Triage and get things done...</p>
                 <p>A plan can be a real life saver!</p>
 
-                <footer className="login__footer">
-                    <p className="temp-styling">Demo credentials: Try any of:</p>
-                    <p className="temp-styling">Username: test123/Password: test123</p>
-                    <p className="temp-styling">Username: test456/Password: test456</p>
-                    <p className="temp-styling">Username: test789/Password: test789</p>
-                    <p className="temp-styling">New User? <Link to='/register'>SIGN UP</Link></p>
+                <footer className='login__footer'>
+                    <p>Demo credentials: Try any of:</p>
+                    <p>Username: test123/Password: test123</p>
+                    <p>Username: test456/Password: test456</p>
+                    <p>Username: test789/Password: test789</p>
+                    <p>New User? <Link to='/register'>SIGN UP</Link></p>
                 </footer>
             </Section>
         );

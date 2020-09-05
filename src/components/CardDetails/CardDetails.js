@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
 import StaticToolbar from '../Navbar/StaticToolbar';
-import Section from '../Utils/Utils';
+import Section, { Error } from '../Utils/Utils';
 import TaskCard from '../TaskCard/TaskCard';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import TasksContext from '../../context/TasksContext';
 import './CardDetails.css';
 
 class CardDetails extends Component {
+    static defaultProps = {
+        match: { params: {} }
+    };
 
     static contextType = TasksContext;
 
@@ -32,20 +36,27 @@ class CardDetails extends Component {
     }
 
     render() {
+
+        const { task, error } = this.context;
+
         return (
             <>
                 <StaticToolbar />
+                {error && <Error message='Could not display task details. Please try again.'/>}
                 <Section className='cardDetails'>
-                    <TaskCard task={this.context.task}/>
-                    <div className='cardDetails-content'>
-                        {/* {__.content.split(/\n \r|\n/).map((para, i) =>
-                            <p key={i}>{para}</p>
-                        )} */}
-                        <p>{this.context.task.content}</p>
+                    <div className='cardDetails__wrapper'>
+                        <TaskCard task={task}/>
+                        <div className='cardDetails-content'>
+                            <p>Last Modified: {format(task.date_modified, 'MMM Do YYYY')}</p>
+                            {/* I hadn't considered it before, but it would have made more sense
+                                to use the user's NAME rather than ID in my tables, as I would have been
+                                able to display 'Modified By:' here. Todo! */}
+                            <p className='align-left'>{task.content}</p>
+                        </div>
                     </div>
                     <div className='cardDetails__buttons'>
                         <button type='button' onClick={() => this.props.history.push(`/teams/${this.props.match.params.teamId}/${this.props.match.params.taskId}/edit-task`)}>Edit</button>
-                        <button type='button' onClick={this.handleArchiveTask}>Archive</button>
+                        {task.status === 'Done'}<button type='button' onClick={this.handleArchiveTask}>Archive</button>
                     </div>
                 </Section>
             </>
