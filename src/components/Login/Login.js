@@ -8,12 +8,14 @@ import TokenService from '../../services/token-service';
 class Login extends Component {
 
     state = {
-        error: null
+        error: null,
+        loading: false
     };
 
     handleSubmitJwtAuth = e => {
         e.preventDefault();
         this.setState({ error: null });
+        this.setState({ loading: true });
         const { username, password } = e.target;
 
         AuthApiService.postLogin({
@@ -28,6 +30,7 @@ class Login extends Component {
             })
             .catch(res => {
                 this.setState({ error: res.error });
+                this.setState({ loading: false });
             });
     }
 
@@ -37,12 +40,13 @@ class Login extends Component {
 
         return (
             <Section className='login'>
+                {error && <Error message={error}/>}
                 <header>
-                    <p className='logo'>+</p>
+                    <p className={'logo ' + (this.state.loading ? 'spin' : '')}>+</p>
                     <p className='spacer'></p>
                     <p className='big-name'>Task Triage</p>
                 </header>
-                {error && <Error message={error}/>}
+                {/* {error && <Error message={error}/>} */}
                 <main>
                     <Form className='login' onSubmit={this.handleSubmitJwtAuth}>
                         <fieldset name='login'>

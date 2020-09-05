@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import StaticToolbar from '../Navbar/StaticToolbar';
-import Section from '../Utils/Utils';
+import Section, { Error } from '../Utils/Utils';
 import TaskList from '../TaskList/TaskList';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import TasksContext from '../../context/TasksContext';
@@ -9,12 +8,17 @@ import './TaskPage.css';
 
 class TaskPage extends Component {
 
+    static defaultProps = {
+        match: { params: {} }
+    };
+
     static contextType = TasksContext;
 
     componentDidMount() {
         const { teamId } = this.props.match.params;
 
         this.context.clearError();
+
         TaskTriageApiService.getTasksByTeam(teamId)
             .then(this.context.setTasksList)
             .catch(this.context.setError);
@@ -22,11 +26,12 @@ class TaskPage extends Component {
 
     render() {
 
-        const { tasksList } = this.context;
+        const { tasksList, error } = this.context;
 
         return (
             <>
                 <StaticToolbar />
+                {error && <Error message={error.error} />}
                 <Section className='taskPage'>
                     <TaskList tasks={tasksList} status='Urgent' />
 

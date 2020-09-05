@@ -38,6 +38,7 @@ class Signup extends Component {
 
         return (
             <Section className='signup'>
+                {error && <Error message={error}/>}
                 <Form className='signup' onSubmit={this.handleSubmit}>
                     <fieldset name='signup'>
                         <legend>Register</legend>
@@ -56,7 +57,6 @@ class Signup extends Component {
                 </Form>
                 <footer className='signup__footer'>
                     <p className='wrap'>Passwords must be between 7 and 72 characters long</p>
-                    {error && <Error message={error}/>}
                 </footer>
             </Section>
         );

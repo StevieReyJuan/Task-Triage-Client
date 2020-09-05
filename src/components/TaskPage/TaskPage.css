@@ -1,5 +1,4 @@
 .taskPage {
-    margin-top: 70px;
     display: flex;
     flex-direction: row;
 }
@@ -9,15 +8,23 @@
 }
 
 .add-button {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50%;
     position: fixed;
     background-color: white;
     color: red;
     right: 5vw;
     bottom: 5vw;
-    font-size: 30px;
+    font-size: 45px;
+    font-weight: 500;
     line-height: 1em;
-    width: 40px;
-    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0;
 }
 
 @media only screen and (max-width: 600px) {

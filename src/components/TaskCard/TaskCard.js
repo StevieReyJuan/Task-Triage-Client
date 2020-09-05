@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './TaskCard.css';
 
 class TaskCard extends Component {
+    static defaultProps = {
+        task: { status: 'Delay' }
+    };
 
     render() {
 
@@ -12,7 +15,6 @@ class TaskCard extends Component {
             <div className={['taskCard', task.status].join(' ')}>
                 <h3 className='taskCard__title'>
                     <Link to={`/teams/${task.team}/${task.id}`}>{task.title}</Link>
-                    {/* {task.title} */}
                 </h3>
             </div>
         );

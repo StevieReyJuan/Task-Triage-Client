@@ -7,6 +7,10 @@ import './TaskList.css';
 
 class TaskList extends Component {
 
+    static defaultProps = {
+        tasks: []
+    };
+
     render() {
         const tasksByStatus = this.props.tasks.filter(task => {
             return task.status === this.props.status})

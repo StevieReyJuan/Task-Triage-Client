@@ -1,3 +1,7 @@
+.section.signup {
+    margin-top: 0;
+}
+
 .signup {
     display: flex;
     flex-direction: column;
@@ -23,10 +27,12 @@
 }
 
 .signup__form fieldset {
-    border-color: black;
+    border-radius: 0.375rem;
+    border: 1px solid #abb3b3;
     display: flex;
     justify-content: space-between;
     padding: 40px;
+    box-shadow: 0 0.375rem 0.75rem rgba(12, 13, 13, 0.15);
 }
 
 .signup__form label {
@@ -46,5 +52,10 @@
 
 .signup button {
     margin: 10px auto;
-    width: 75px;
+    width: 80px;
 }  
+
+.signup .error-message {
+    position: absolute;
+    top: 0;
+}

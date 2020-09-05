@@ -1,9 +1,11 @@
 .taskList {
-    /* background-color: #ccc; */
+    color: #232a3b;
     flex: 1;
-    min-height: 700px;
+    height: 90vh;
     margin: 10px;
     text-align: center;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.375rem 0.75rem rgba(12, 13, 13, 0.15);
 }
 
 .taskList h2 {
