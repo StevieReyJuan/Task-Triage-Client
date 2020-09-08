@@ -25,7 +25,6 @@ a:hover {
 }
 
 input, textarea {
-    /* font-size: 0.875rem; */
     border: 1px solid #aaa;
     box-shadow: inset 1px 1px 1px #eee;
 }

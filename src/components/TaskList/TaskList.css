@@ -17,17 +17,14 @@
 }
 
 .taskList.Urgent {
-    /* border: 2px solid red; */
     background-color: rgba(255,0,0,0.1);
 }
 
 .taskList.Elevated {
-    /* border: 2px solid yellow; */
     background-color: rgba(255,255,0,0.1);
 }
 
 .taskList.Delay {
-    /* border: 2px solid green; */
     background-color: rgba(0,128,0,0.1);
 }
 

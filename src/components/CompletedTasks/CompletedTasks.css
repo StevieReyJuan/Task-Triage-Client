@@ -22,10 +22,6 @@
     align-items: center;
 }
 
-.completedTasks__table thead {
-
-}
-
 .completedTasks__table th {    
     padding: 1em;
 }

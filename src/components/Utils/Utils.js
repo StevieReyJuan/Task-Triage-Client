@@ -11,7 +11,6 @@ export function Form({ className, ...otherProps }) {
     return (
         <form 
             className={[className, 'form'].join('__')} 
-            // action='#'
             {...otherProps}
         />
     );

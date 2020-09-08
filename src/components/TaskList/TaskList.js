@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import TaskCard from '../TaskCard/TaskCard';
-// import StaticToolbar from '../Navbar/StaticToolbar';
 import Section from '../Utils/Utils';
 import './TaskList.css';
 

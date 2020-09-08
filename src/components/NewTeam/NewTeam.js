@@ -19,7 +19,6 @@ class NewTeam extends Component {
             .then(res => {
                 team_name.value = '';
                 this.props.history.goBack();
-                // Add success message to context, display on team page?
             })
             .catch(this.context.setError);
     }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import StaticToolbar from '../Navbar/StaticToolbar';
 import Section, { Error } from '../Utils/Utils';

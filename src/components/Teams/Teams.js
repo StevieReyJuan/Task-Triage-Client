@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Section, { Table, Error } from '../Utils/Utils';
-// import StaticToolbar from '../Navbar/StaticToolbar';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import TeamsContext from '../../context/TeamsContext';
 import './Teams.css';
