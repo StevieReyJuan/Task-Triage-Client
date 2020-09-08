@@ -13,7 +13,6 @@ class JoinTeam extends Component {
         e.preventDefault();
         this.context.clearError();
 
-        // console.log(e.target.token.value);
         const token = e.target.token;
 
         TaskTriageApiService.joinTeam(token.value)

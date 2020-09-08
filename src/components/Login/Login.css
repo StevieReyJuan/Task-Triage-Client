@@ -66,6 +66,10 @@
     margin: 0 auto;
 }
 
+.login legend {
+    display: none;
+}
+
 .login .spacer {
     flex: 1;
 }

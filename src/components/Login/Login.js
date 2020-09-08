@@ -46,11 +46,10 @@ class Login extends Component {
                     <p className='spacer'></p>
                     <p className='big-name'>Task Triage</p>
                 </header>
-                {/* {error && <Error message={error}/>} */}
                 <main>
                     <Form className='login' onSubmit={this.handleSubmitJwtAuth}>
                         <fieldset name='login'>
-                            {/* <legend>Task Triage</legend> */}
+                            <legend>Task Triage</legend>
 
                             <label htmlFor='username'>Username</label>
                             <input type='text' name='username' id='username' required />

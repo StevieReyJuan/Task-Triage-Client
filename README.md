@@ -14,31 +14,31 @@ Version 1.0 is fully functional and ready for collaboration! A "teammate" with a
 ## Screenshots
 Landing Page/Log In:
 
-![landing page]()
+<img src="ttscreenshots/login.png" width="324">
 
 User's Teams:
 
-![teams]()
+<img src="ttscreenshots/teams.png" width="324">
 
 Task Lists: 
 
-![task lists]()
+<img src="ttscreenshots/taskpage.png" width="324">
 
 Task Details:
 
-![task details]()
+<img src="ttscreenshots/taskdetails.png" width="324">
 
 Add/Edit Task: 
 
-![add/edit task]()
+<img src="ttscreenshots/newtask.png" width="324">
 
 User's Archived Tasks:
 
-![archived]()
+<img src="ttscreenshots/completed.png" width="324">
 
 Join/Add Team: 
 
-![join/add team]()
+<img src="ttscreenshots/newteam.png" width="324">
 
 ## Built With
 
