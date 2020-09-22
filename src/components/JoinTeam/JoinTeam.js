@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Section, { Form, Error } from '../Utils/Utils';
-import StaticToolbar from '../Navbar/StaticToolbar';
+import ResponsiveNavbar from '../Navbar/ResponsiveNavbar';
 import TeamsContext from '../../context/TeamsContext';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import './JoinTeam.css';
@@ -29,7 +29,7 @@ class JoinTeam extends Component {
 
         return (
             <>
-                <StaticToolbar />
+                <ResponsiveNavbar />
                 {error && <Error message={error.error}/>}
                 <Section className='joinTeam'>
                     <Form className='joinTeam' onSubmit={this.handleSubmitTeam}>

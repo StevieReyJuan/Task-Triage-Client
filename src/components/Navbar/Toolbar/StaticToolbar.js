@@ -6,7 +6,8 @@ function StaticToolbar() {
     return (
         <header className='toolbar'>
             <nav className='toolbar__navigation'>
-                <div className='toolbar__toggle-button' />
+                <div className='toolbar__toggle-button'>
+                </div>
                 <div className='toolbar__logo'><Link to='/teams'>Task + Triage</Link></div>
                 <div className='spacer' />
                 <div className='toolbar__navigation-items'>

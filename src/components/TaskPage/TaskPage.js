@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StaticToolbar from '../Navbar/StaticToolbar';
+import ResponsiveNavbar from '../Navbar/ResponsiveNavbar';
 import Section, { Error } from '../Utils/Utils';
 import TaskList from '../TaskList/TaskList';
 import TaskTriageApiService from '../../services/endpoint-api-service';
@@ -30,7 +30,7 @@ class TaskPage extends Component {
 
         return (
             <>
-                <StaticToolbar />
+                <ResponsiveNavbar />
                 {error && <Error message={error.error} />}
                 <Section className='taskPage'>
                     <TaskList tasks={tasksList} status='Urgent' />

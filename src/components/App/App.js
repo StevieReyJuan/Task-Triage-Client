@@ -12,6 +12,7 @@ import NewTask from '../NewTask/NewTask';
 import CardDetails from '../CardDetails/CardDetails';
 import EditTask from '../EditTask/EditTask';
 import NotFound from '../NotFound/NotFound';
+import PrivateRoute from '../Utils/PrivateRoute';
 
 class App extends Component {
     render() {
@@ -20,14 +21,14 @@ class App extends Component {
                     <Switch >
                         <Route exact path='/' component={Login} />
                         <Route path='/register' component={Signup} />
-                        <Route exact path='/teams' component={Teams} />
-                        <Route exact path='/teams/:teamId' component={TaskPage} />
-                        <Route exact path='/teams/:teamId/new-task' component={NewTask} />
-                        <Route exact path='/teams/:teamId/:taskId' component={CardDetails}/>
-                        <Route exact path='/teams/:teamId/:taskId/edit-task' component={EditTask}/>
-                        <Route path='/join-team' component={JoinTeam} />
-                        <Route path='/new-team' component={NewTeam} />
-                        <Route path='/completed' component={CompletedTasks} />
+                        <PrivateRoute exact path='/teams' component={Teams} />
+                        <PrivateRoute exact path='/teams/:teamId' component={TaskPage} />
+                        <PrivateRoute exact path='/teams/:teamId/new-task' component={NewTask} />
+                        <PrivateRoute exact path='/teams/:teamId/:taskId' component={CardDetails}/>
+                        <PrivateRoute exact path='/teams/:teamId/:taskId/edit-task' component={EditTask}/>
+                        <PrivateRoute path='/join-team' component={JoinTeam} />
+                        <PrivateRoute path='/new-team' component={NewTeam} />
+                        <PrivateRoute path='/completed' component={CompletedTasks} />
                         <Route component={NotFound} />
                     </Switch>
             </div>

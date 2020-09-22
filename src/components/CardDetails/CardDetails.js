@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns';
-import StaticToolbar from '../Navbar/StaticToolbar';
+import ResponsiveNavbar from '../Navbar/ResponsiveNavbar';
 import Section, { Error } from '../Utils/Utils';
 import TaskCard from '../TaskCard/TaskCard';
 import TaskTriageApiService from '../../services/endpoint-api-service';
@@ -40,7 +40,7 @@ class CardDetails extends Component {
 
         return (
             <>
-                <StaticToolbar />
+                <ResponsiveNavbar />
                 {error && <Error message='Could not display task details. Please try again.'/>}
                 <Section className='cardDetails'>
                     <div className='cardDetails__wrapper'>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TasksContext from '../../context/TasksContext';
+import ResponsiveNavbar from '../Navbar/ResponsiveNavbar';
 import Section, { Table, Error } from '../Utils/Utils';
 import { format } from 'date-fns';
 import './CompletedTasks.css';
@@ -24,12 +25,10 @@ class CompletedTasks extends Component {
         
         return (
             <>
-                <nav className="toolbar">
-                    <div className="toolbar__navigation">
-                        <div className='toolbar__logo'><Link to='/teams'>Task Triage</Link></div>
-                    </div>
-                </nav>
+                <ResponsiveNavbar />
+
                 {this.context.error && <Error message='Could not load completed tasks. Please try again.' />}
+
                 <Section className='completedTasks'>
                     <Table className='completedTasks'>
                         <thead>

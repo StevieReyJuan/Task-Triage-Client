@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Section, { Form, Error } from '../Utils/Utils';
-import StaticToolbar from '../Navbar/StaticToolbar';
+import ResponsiveNavbar from '../Navbar/ResponsiveNavbar';
 import TasksContext from '../../context/TasksContext';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import './EditTask.css';
@@ -34,7 +34,7 @@ class EditTask extends Component {
 
         return (
             <>
-                <StaticToolbar />
+                <ResponsiveNavbar />
                 {error && <Error message='Something went wrong. Please try again.' />}
                 <Section className='editTask'>
                     <Form className='editTask' onSubmit={this.handleSubmitTask}>

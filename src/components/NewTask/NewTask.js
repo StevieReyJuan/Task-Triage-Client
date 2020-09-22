@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Section, { Form, Error } from '../Utils/Utils';
-import StaticToolbar from '../Navbar/StaticToolbar';
+import ResponsiveNavbar from '../Navbar/ResponsiveNavbar';
 import TasksContext from '../../context/TasksContext';
 import TaskTriageApiService from '../../services/endpoint-api-service';
 import './NewTask.css';
@@ -33,7 +33,7 @@ class NewTask extends Component {
         const { error } = this.context;
         return (
             <>
-                <StaticToolbar />
+                <ResponsiveNavbar />
                 {error && <Error message={error.error} />}
                 <Section className='newTask'>
                     <Form className='newTask' onSubmit={this.handleSubmitTask}>
